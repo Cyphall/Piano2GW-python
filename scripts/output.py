@@ -51,9 +51,9 @@ class Input(ctypes.Structure):
 	]
 
 
-# Actuals Functions
+# Actual Functions
 
-def PressKey(hex_key_code):
+def press_key(hex_key_code):
 	extra = ctypes.c_ulong(0)
 	ii_ = InputI()
 	ii_.ki = KeyBdInput(0, hex_key_code, 0x0008, 0, ctypes.pointer(extra))
@@ -61,7 +61,7 @@ def PressKey(hex_key_code):
 	ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
 
-def ReleaseKey(hex_key_code):
+def release_key(hex_key_code):
 	extra = ctypes.c_ulong(0)
 	ii_ = InputI()
 	ii_.ki = KeyBdInput(0, hex_key_code, 0x0008 | 0x0002, 0, ctypes.pointer(extra))
@@ -69,7 +69,6 @@ def ReleaseKey(hex_key_code):
 	ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
 
-def SendKey(hex_key_code):
-	PressKey(hex_key_code)
-	time.sleep(0.01)
-	ReleaseKey(hex_key_code)
+def send_key(hex_key_code):
+	press_key(hex_key_code)
+	release_key(hex_key_code)

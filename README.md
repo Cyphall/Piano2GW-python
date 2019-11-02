@@ -16,6 +16,4 @@ pip install rtmidi
 3. Run the script corresponding to your instrument.
 
 # Known issues
-Octave switching can be inconsistent.
-
-Doing a 2+ octaves jump in a single note doesn't work.
+Inter-octave chords can be inconsistent if they are played too quickly.
