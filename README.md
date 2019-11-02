@@ -7,6 +7,9 @@ However, I don't control ANET's banwaves and the "zero risk" cannot be guarantee
 
 **USE IT AT YOUR OWN RISK**
 
+# Keybinds
+This script uses the default layout (1234567890).
+
 # Usage
 1. Connect your physical instrument to the PC.
 2. Install the python module `rtmidi`:
